@@ -3,18 +3,21 @@ package ds.arrays;
 public class Replace0With5 {
 	
 	public static void main(String[] args) {
-		int num = -5;
+		int num = -1006;
+		//int convertedNumber = num + replaceDigits(num);
+		System.out.println(replaceDigits(num));
+	}
+	
+	public static int replaceDigits(int num) {
+		
+		int orignalNum = num;
+		
 		boolean ifNegative = false;
 		if(num < 0) {
 			ifNegative = true;
 		}
-		int convertedNumber = num + replaceDigits(num, ifNegative);
-		System.out.println((convertedNumber));
-	}
-	
-	public static int replaceDigits(int num, boolean negative) {
 		
-		num = negative ? (-1 * num) : num;
+		num = ifNegative ? (-1 * num) : num;
 		
 		int result = 0;
 		int decimal = 1;
@@ -30,7 +33,7 @@ public class Replace0With5 {
 			decimal *= 10;
 			num /= 10;
 		}
-		return negative ? (-1 * result) : result;
+		return orignalNum + (ifNegative ? (-1 * result) : result);
 	}
 }
 
