@@ -1,4 +1,4 @@
-package ds.arrays;
+package com.ananth.arrays.easy;
 
 public class MissingNumberArray {
 	 
