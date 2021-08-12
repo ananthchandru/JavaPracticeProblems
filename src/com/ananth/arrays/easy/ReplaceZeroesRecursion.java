@@ -34,7 +34,7 @@ class ReplaceZeroesRecursion {
 }
 
 /*
-        Special cases:
+        Edge cases:
         i) Input is zero
         i) negative numbers
         ii) Floating numbers

@@ -24,7 +24,7 @@ public class ValueEqualtoIndex {
 	}
 }
 
-//Corner cases
+//Edge cases
 
 //1. Input array is empty
 //2. Input array has negative values
