@@ -2,7 +2,7 @@ package com.ananth.arrays.easy;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class ValueEqualtoIndex {
 	public static void main (String[] args) {
