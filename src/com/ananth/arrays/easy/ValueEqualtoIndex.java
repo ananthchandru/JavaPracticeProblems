@@ -1,15 +1,14 @@
 package com.ananth.arrays.easy;
 
+import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ValueEqualtoIndex {
 	public static void main (String[] args) {
 		int[] arr = {0,45,3,5,5,7,7};
-		ArrayList<Integer> indexArrays = valueEqualToIndex(arr);
-		for(int element : indexArrays) {
-			System.out.println(element);
-		}
-		
+		List<Integer> indexArrays = valueEqualToIndex(arr);
+		System.out.println(indexArrays.toString());
 	}
 	
 	public static ArrayList<Integer> valueEqualToIndex(int[] arr) {
