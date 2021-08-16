@@ -3,16 +3,13 @@ package com.ananth.arrays.easy;
 public class MissingNumberArray {
 	 
     public static void main(String[] args) {
- 
         int[] arr1={7,5,8,6,4,2};
         System.out.println("Missing number from array arr1: "+missingNumber(arr1));
         int[] arr2={5,3,1,2};
         System.out.println("Missing number from array arr2: "+missingNumber(arr2));
- 
     }
  
-    public static int missingNumber(int[] arr)
-    {
+    public static int missingNumber(int[] arr) {
         int n=arr.length+1;
         int sum=n*(n+1)/2;
         int restSum=0;

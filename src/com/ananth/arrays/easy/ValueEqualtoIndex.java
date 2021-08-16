@@ -14,7 +14,6 @@ public class ValueEqualtoIndex {
 	public static ArrayList<Integer> valueEqualToIndex(int[] arr) {
 		int inputArrayLength = arr.length;
 		ArrayList<Integer> indexArrayList = new ArrayList<Integer>();
-		int[] indexArrays = new int[inputArrayLength];
 		for(int i=0;i<inputArrayLength;i++) {
 			if(arr[i]==i+1) {
 				indexArrayList.add(arr[i]);
