@@ -7,8 +7,7 @@ public class FirstLetterOfWordInString {
         System.out.println(getFirstLetter(input));
     }
 
-    static String getFirstLetter(String inputString)
-    {
+    static String getFirstLetter(String inputString) {
         StringBuffer strBufffer = new StringBuffer();
         String arr[] = inputString.split(" ");
         for(String str:arr)

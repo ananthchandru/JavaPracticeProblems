@@ -1,4 +1,4 @@
-package com.ananth.arrays.easy;
+package com.ananth.maths.easy;
 
 import java.util.ArrayList;
 
@@ -46,3 +46,4 @@ public class GenerateBinaryNumbers {
         return strBuffer.toString();
     }*/
 }
+
