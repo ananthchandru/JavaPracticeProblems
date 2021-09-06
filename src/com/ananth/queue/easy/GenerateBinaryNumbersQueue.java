@@ -30,7 +30,7 @@ public class GenerateBinaryNumbersQueue {
 
     // Driver program to test above function
     public static void main(String[] args) {
-        int n = 20;
+        int n = 5;
         ArrayList<String> binaryNos = generatePrintBinary(n);
         System.out.println(binaryNos.toString());
     }
