@@ -31,7 +31,7 @@ class KLargestElements {
 
 
     public static void main(String[] args) {
-        int[] input = {2, 5, 1, 9, 3, 8, 7};
+        int[] input = {2, 5, 3, 1, 6, 4};
         int k = 3;
         ArrayList<Integer> outputMin = getKLargestElementsMinHeap(input, k);
         ArrayList<Integer> outputMax = getKLargestElementsMaxHeap(input, k);
@@ -65,6 +65,7 @@ class KLargestElements {
                 minHeap.add(arr[i]);
             }
         }
+        //For Kth largest => return minHeap.poll()
 
         for (int i = 0; i < k; i++)
             kLargeElements.add(minHeap.poll());

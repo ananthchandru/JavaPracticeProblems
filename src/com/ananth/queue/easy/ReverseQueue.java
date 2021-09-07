@@ -45,7 +45,7 @@ public class ReverseQueue {
         return queue;
     }
 
-    static Queue<Integer> reverseQueueRecursion(Queue<Integer> queue) {
+    /*static Queue<Integer> reverseQueueRecursion(Queue<Integer> queue) {
         // Base case
         if (queue.isEmpty())
             return queue;
@@ -56,9 +56,9 @@ public class ReverseQueue {
         // Enqueue current item (to rear)
         queue.add(data);
         return queue;
-    }
+    }*/
 
-    static Queue<Integer> reverseQueueUsingQueue(Queue<Integer> queue) {
+ /*   static Queue<Integer> reverseQueueUsingQueue(Queue<Integer> queue) {
         int s = queue.size();
         Queue<Integer> ans = new LinkedList<>();
         for (int i = 0; i < s; i++) {
@@ -67,5 +67,5 @@ public class ReverseQueue {
             ans.add(queue.remove());
         }
         return ans;
-    }
+    }*/
 }
