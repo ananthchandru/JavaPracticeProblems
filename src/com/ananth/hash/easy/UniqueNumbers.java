@@ -1,4 +1,4 @@
-package com.ananth.arrays.easy;
+package com.ananth.hash.easy;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -8,10 +8,12 @@ public class UniqueNumbers {
     //Print digits with only unique numbers => when L = 110, R = 135, we ignore 111,121,122,131,133
     public static void main(String[] args) {
         ArrayList<Integer> list = uniqueNumbers1(23,362);
+//       ArrayList<Integer> list = uniqueNumbers2(23,362);
+//       ArrayList<Integer> list = uniqueNumbers3(23,362);
         System.out.println(list.toString());
     }
 
-    static ArrayList<Integer> uniqueNumbers1(int L, int R){
+    static ArrayList<Integer> uniqueNumbers1(int L, int R) {
         ArrayList<Integer> uniqueNos = new ArrayList<Integer>();
         for(int i=L; i<=R; i++) {
             boolean[] visited = new boolean[10];
