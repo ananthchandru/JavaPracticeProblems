@@ -90,8 +90,8 @@ public class NumberOfOccurences {
         return lastIndex;
     }
 
-    //Approach 3: Binary search => O(log N + k) where k is number of occurrences.
-    static int count2(int[] arr, int n, int x) {
+    //Approach 3 (not recommended): Binary search => O(log N + k) where k is number of occurrences.
+   /* static int count2(int[] arr, int n, int x) {
         int index = binarySearch(arr, x, 0, n-1);
         if(index == -1)
             return 0;
@@ -117,5 +117,5 @@ public class NumberOfOccurences {
                 high = mid-1;
         }
         return -1;
-    }
+    }*/
 }
