@@ -19,7 +19,7 @@ public class FindMedian {
 			return arr[0];
 
 		int medianIndex = arrayLength/2;
-
+		//quick sort
 		Arrays.sort(arr, 0, medianIndex);
 
 		//Implement bubble sort for half of the array

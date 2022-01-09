@@ -6,22 +6,43 @@ public class GenerateBinaryNumbers {
 
     public static void main(String[] args) {
         int n = 5;
-        ArrayList<String> list = new GenerateBinaryNumbers()
-                .generateBinaryNos(5);
-        System.out.println(list.toString());
+        long binaryNos = new GenerateBinaryNumbers().generateBinaryNos(5);
+        System.out.println(String.valueOf(binaryNos));
     }
 
     //using library
-    public ArrayList<String> generateBinaryNos(int n) {
-        ArrayList<String> binaryNos = new ArrayList<String>();
-        for(int i=1; i<=n; i++) {
-            binaryNos.add(Integer.toBinaryString(i));
-        }
-        return binaryNos;
-    }
+//    public ArrayList<String> generateBinaryNos(int n) {
+//        ArrayList<String> binaryNos = new ArrayList<String>();
+//        for(int i=1; i<=n; i++) {
+//            binaryNos.add(Integer.toBinaryString(i));
+//        }
+//        return binaryNos;
+//    }
 
     //exact logic
-    /*public ArrayList<String> generateBinaryNos(int n) {
+    public long generateBinaryNos(int n) {
+
+        long binaryNumber = 0;
+        int remainder;
+        int placeValue = 1;
+        int step = 1;
+
+        while (n != 0) {
+            remainder = n % 2;
+            System.out.println("Step " + step++ + ": " + n + "/2");
+
+            System.out.println("Quotient = " + n / 2 + ", Remainder = " + remainder);
+            n /= 2;
+
+            binaryNumber += remainder * placeValue;
+            placeValue *= 10;
+        }
+
+        return binaryNumber;
+    }
+
+    /*   exact logic
+    //  public ArrayList<String> generateBinaryNos(int n) {
         ArrayList<String> binaryNos = new ArrayList<String>();
         for(int i=1; i<=n; i++) {
             binaryNos.add(getBinaryNumber(i));

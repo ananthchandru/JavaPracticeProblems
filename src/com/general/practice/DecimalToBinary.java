@@ -14,22 +14,26 @@ public class DecimalToBinary {
     }*/
 
     //actual logic
-    public static void main(String args[]) {
+    public static void main (String args[]) {
 
-        int decimal = 11;
-        int[] binary = new int[40];
-        int index = 0;
+        int n = 5;
 
-        while(decimal > 0){
-            binary[index] = decimal%2;
-            decimal = decimal/2;
-            index++;
+        long binaryNumber = 0;
+        int remainder;
+        int placeValue = 1;
+        int step = 1;
+
+        while (n != 0) {
+            remainder = n % 2;
+            System.out.println("Step " + step++ + ": " + n + "/2");
+
+            System.out.println("Quotient = " + n / 2 + ", Remainder = " + remainder);
+            n /= 2;
+
+            binaryNumber += remainder * placeValue;
+            placeValue *= 10;
         }
 
-        String str = "";
-        for(int i = index-1; i>=0; i--)
-            str+=Integer.toString(binary[i]);
-
-        System.out.println(str);
+        System.out.println(binaryNumber);
     }
 }
