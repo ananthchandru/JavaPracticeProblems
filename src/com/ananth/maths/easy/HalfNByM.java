@@ -2,14 +2,13 @@ package com.ananth.maths.easy;
 
 public class HalfNByM {
     public static void main (String[] args) {
-        int output = mthHalf(100, 4);
-        System.out.println(output);
+       mthHalf(100, 4);
     }
 
-    static int mthHalf(int N, int M){
+    static void mthHalf(int N, int M){
         int count = 0;
+        System.out.println(N);
         for(int i=1; i<M; i++)
-            N=N/2;
-        return N;
+            System.out.println(N=N/2);
     }
 }
