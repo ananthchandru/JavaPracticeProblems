@@ -2,6 +2,8 @@ package com.ananth.arrays.easy;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+//Find all elements in array which have at-least two greater elements
+
 class AtleastTwoGreaterElements {
 
     /*
