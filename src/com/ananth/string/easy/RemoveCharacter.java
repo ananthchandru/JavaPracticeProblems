@@ -28,8 +28,7 @@ public class RemoveCharacter {
         return str;
     }
 
-    static int[] getCharCountArray(String str)
-    {
+    static int[] getCharCountArray(String str) {
         int count[] = new int[NO_OF_CHARS];
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);

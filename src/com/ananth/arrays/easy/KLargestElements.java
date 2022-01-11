@@ -26,7 +26,7 @@ class KLargestElements {
             O(log N) is for heapify
             O(K) is for taking out k elements
 
-       v) Quick select => O(N) (worst case O(N^2) which is rare)
+       iii) Quick select => O(N) (worst case O(N^2) which is rare)
      */
 
 

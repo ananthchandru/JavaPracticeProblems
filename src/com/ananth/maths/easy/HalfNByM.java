@@ -1,6 +1,7 @@
 package com.ananth.maths.easy;
 
 public class HalfNByM {
+
     public static void main (String[] args) {
        mthHalf(100, 4);
     }
