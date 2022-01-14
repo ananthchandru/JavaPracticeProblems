@@ -1,8 +1,6 @@
 package com.ananth.arrays.easy;
 
-import java.io.*;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -12,13 +10,13 @@ public class AnagramOfString {
         String s = "baseline"; //only small letters for now
         String s1 = "base";
         System.out.println(areAnagram1(s1.toCharArray(), s.toCharArray()));
-//        System.out.println(areAnagram(s1.toCharArray(), s.toCharArray()));
+        System.out.println(areAnagram(s1.toCharArray(), s.toCharArray()));
         System.out.println(isAnagram(s1, s));
     }
 
 /*
     Approach 1: O(NLogN) - Sort both strings and compare (not recommended)
-    Approach 2 O(N) - use an array
+    Approach 2 O(N) - use an array (better)
     Approach 3: O(N) - use hashmap
 */
     static boolean areAnagram(char[] str1, char[] str2)
