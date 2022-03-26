@@ -9,14 +9,16 @@ package com.ananth.bitmagic.easy;
 public class CheckSetBits {
 
     public static void main (String[] args) {
-        int input = 63;
+        int input = 11;
+        System.out.println(input);
         System.out.println(Integer.bitCount(input));
         if(isBitSet(input)==1)
             System.out.println("All bits set");
         else
             System.out.println("All bits not set");
 
-    //    System.out.println(isBitSet2(input));
+    //  System.out.println(isBitSet2(input));
+        System.out.println(isBitSet3(input));
     }
 
     /* ‘&’ : - is a Bitwise AND Operator. It produces a one (1) in the output if both the input bits are one.
@@ -39,5 +41,15 @@ public class CheckSetBits {
         if(n!=0 && (Math.pow(2, Integer.bitCount(n)) -1)==n)
             return 1;
         return 0;
+    }
+
+    static int isBitSet3(int n) {
+        while(n>0) {
+            if (n % 2 == 1)
+                n = n / 2;
+            else
+                return 0;
+        }
+        return 1;
     }
 }
