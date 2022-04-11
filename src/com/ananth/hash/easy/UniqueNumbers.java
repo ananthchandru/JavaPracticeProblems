@@ -7,9 +7,9 @@ import java.util.Set;
 public class UniqueNumbers {
     //Print digits with only unique numbers => when L = 110, R = 135, we ignore 111,121,122,131,133
     public static void main(String[] args) {
-        ArrayList<Integer> list = uniqueNumbers1(23,362);
+//        ArrayList<Integer> list = uniqueNumbers1(220,225);
 //       ArrayList<Integer> list = uniqueNumbers2(23,362);
-//       ArrayList<Integer> list = uniqueNumbers3(23,362);
+       ArrayList<Integer> list = uniqueNumbers3(220,225);
         System.out.println(list.toString());
     }
 

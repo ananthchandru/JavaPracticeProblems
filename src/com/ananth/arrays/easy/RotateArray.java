@@ -8,7 +8,9 @@ class RotateArray {
      space with temp array
     ii) O(N) + (1) space -
         Reversal Algorithm
-        Juggling Algorithm (GCD)
+        Juggling Algorithm (GCD) => GCD = (A*B)/LCM(A,B)
+        LCM =>https://www.cuemath.com/numbers/lcm-least-common-multiple/
+
         Block swap Algorithm
     */
     public static void main(String[] args) {

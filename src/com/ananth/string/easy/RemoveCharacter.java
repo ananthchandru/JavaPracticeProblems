@@ -5,8 +5,8 @@ public class RemoveCharacter {
     static final int NO_OF_CHARS = 256;
 
     public static void main(String[] args){
-        String input = "jznpcsojzozgpc";
-        String delete = "toaewnevyxlir";
+        String input = "abcdefef";
+        String delete = "ef";
         String output = removeDirtyChars(input, delete);
         System.out.println(output);
     }
@@ -17,13 +17,13 @@ public class RemoveCharacter {
         char input[] = str.toCharArray();
 
         while (i != input.length) {
-            if (count[input[i]] == 0) {
-                input[j] = input[i];
+            char ch = input[i];
+            if (count[ch] == 0) {
+                input[j] = ch;
                 j++;
             }
             i++;
         }
-
         str = new String(input).substring(0, j);
         return str;
     }
