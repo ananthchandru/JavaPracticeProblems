@@ -11,8 +11,8 @@ import java.util.*;
 public class AnagramOfString {
 
     public static void main(String[] args) {
-        String str1 = "baseline"; //only small letters for now
-        String str2 = "base";
+        String str1 = "bchadeh"; //only small letters for now
+        String str2 = "hea";
         System.out.println(minCharsToRemove(str1, str2));
     }
 
