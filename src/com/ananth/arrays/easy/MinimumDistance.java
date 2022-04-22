@@ -24,7 +24,7 @@ public class MinimumDistance {
         return min_distance;
     }
 
-    //Shorter code O(n)
+    //Method 2: O(N)
     static int minDist1(int arr[], int n, int x, int y) {
         //previous index and min distance
         int prev = -1, min_dist = Integer.MAX_VALUE;

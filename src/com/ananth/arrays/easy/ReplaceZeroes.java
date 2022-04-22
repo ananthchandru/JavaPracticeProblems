@@ -3,7 +3,7 @@ package com.ananth.arrays.easy;
 class ReplaceZeroes {
 
     public static void main(String[] args) {
-        int input = -10;
+        int input = -990;
         int replaceWith = 5;
         ReplaceZeroes obj = new ReplaceZeroes();
         int output = obj.replaceZeroes(input, replaceWith);
@@ -26,14 +26,10 @@ class ReplaceZeroes {
         int placeValue = 1;
 
         while(input > 0) {
-            int modulus = input % 10;
-            if(modulus == 0)
-                output += replaceWith * placeValue;
-            else {
-                output += modulus * placeValue;
-            }
-            input = input/10;
-            placeValue = placeValue * 10;
+            int modulus = (input % 10==0)? replaceWith:(input % 10);
+            output += modulus * placeValue;
+            input /= 10;
+            placeValue *= 10;
         }
         return (isNegative ? -1 * output : output);
     }

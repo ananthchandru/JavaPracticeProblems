@@ -93,9 +93,9 @@ class RotateArray {
     static String rotateArrayReverse(char[] arr, int position) {
         int n = arr.length;
         position = position % n;
-        reverse(arr, 0, n-1); //reverse entire array  ("ERUDNE")
-        reverse(arr, 0, position-1); //reverse first k elements ("DURENE")
-        reverse(arr, position, n-1);// reverse remaining elements ("DUREEN")
+        reverse(arr, 0, position-1); //reverse entire array  ("ERUDNE")
+        reverse(arr, position, n-1); //reverse first k elements ("DURENE")
+        reverse(arr, 0, n-1);// reverse remaining elements ("DUREEN")
 
         return String.valueOf(arr);
     }
