@@ -1,6 +1,8 @@
 package com.ananth.arrays.easy;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.PriorityQueue;
 
 //Find all elements in array which have at-least two greater elements
 
@@ -40,5 +42,29 @@ class AtleastTwoGreaterElements {
         int[] input = {8,4,2,1,7,9,3};
         AtleastTwoGreaterElements obj = new AtleastTwoGreaterElements();
         System.out.println(Arrays.toString(obj.getGreaterElements(input)));
+    }
+
+    /*Geeks For Geeks problem method - result needs to printed in assc order */
+    public long[] findElements( long a[], long n)
+    {
+        int num = (int)n;
+        long[] output = new long[num-2];
+        PriorityQueue<Long> queue = new PriorityQueue<Long>(Collections.reverseOrder());
+        for(int i=0;i<num-2;i++)
+            queue.add(a[i]);
+
+        for(int i=num-2;i<num;i++) {
+            long peek = queue.peek();
+            if(peek > a[i]) {
+                queue.poll();
+                queue.add(a[i]);
+            }
+        }
+        int j=output.length-1;
+        while(!queue.isEmpty()) {
+            output[j] = queue.poll();
+            j--;
+        }
+        return output;
     }
 }

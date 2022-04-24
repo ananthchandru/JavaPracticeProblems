@@ -52,4 +52,12 @@ public class CheckSetBits {
         }
         return 1;
     }
+
+    static int isBitSet4(int N){
+        for(int i=0; i<32; i++) {
+            if(N == (int)Math.pow(2,i) -1 )
+                return 1;
+        }
+        return 0;
+    }
 }

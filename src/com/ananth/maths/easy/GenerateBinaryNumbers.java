@@ -1,70 +1,71 @@
 package com.ananth.maths.easy;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class GenerateBinaryNumbers {
 
     public static void main(String[] args) {
         int n = 5;
-        long binaryNos = new GenerateBinaryNumbers().generateBinaryNos(5);
-        System.out.println(String.valueOf(binaryNos));
+//        ArrayList<String> arrListStr = new GenerateBinaryNumbers().generateBinaryNosString(10);
+//        System.out.println(String.valueOf(arrListStr));
+        ArrayList<String> arrList = new GenerateBinaryNumbers().generateBinaryNosInteger(10);
+        System.out.println(arrList);
+        ArrayList<String> arrListQ = new GenerateBinaryNumbers().generateBinaryNosUsingQueue(10);
+        System.out.println(arrListQ);
     }
 
     //using library
-//    public ArrayList<String> generateBinaryNos(int n) {
-//        ArrayList<String> binaryNos = new ArrayList<String>();
-//        for(int i=1; i<=n; i++) {
-//            binaryNos.add(Integer.toBinaryString(i));
-//        }
-//        return binaryNos;
-//    }
-
-    //exact logic
-    public long generateBinaryNos(int n) {
-
-        long binaryNumber = 0;
-        int remainder;
-        int placeValue = 1;
-        int step = 1;
-
-        while (n != 0) {
-            remainder = n % 2;
-            System.out.println("Step " + step++ + ": " + n + "/2");
-
-            System.out.println("Quotient = " + n / 2 + ", Remainder = " + remainder);
-            n /= 2;
-
-            binaryNumber += remainder * placeValue;
-            placeValue *= 10;
-        }
-
-        return binaryNumber;
-    }
-
-    /*   exact logic
-    //  public ArrayList<String> generateBinaryNos(int n) {
+    public ArrayList<String> generateBinaryNosString(int n) {
         ArrayList<String> binaryNos = new ArrayList<String>();
         for(int i=1; i<=n; i++) {
-            binaryNos.add(getBinaryNumber(i));
+            binaryNos.add(Integer.toBinaryString(i));
         }
         return binaryNos;
     }
 
-    public String getBinaryNumber(int decimal) {
-        int[] binary= new int[40];
-        int index = 0;
-
-        while(decimal >0) {
-            binary[index] = decimal % 2;
-            decimal /= 2;
-            index++;
+    static ArrayList<String> generateBinaryNosInteger(int n) {
+        ArrayList<String> binaryArray = new ArrayList<String>();
+        for(int i=1; i<=n;i++) {
+            int result = 0;
+            int placeValue = 1;
+            int num = i;
+            while(num>0) {
+                int mod = num%2;
+                result += mod*placeValue;
+                num=num/2;
+                placeValue *=10;
+            }
+            binaryArray.add(Integer.toString(result));
         }
+        return binaryArray;
+    }
 
-        StringBuffer strBuffer = new StringBuffer();
-        for(int i = index-1; i>=0; i--)
-            strBuffer.append(Integer.toString(binary[i]));
+    //Function to generate binary numbers from 1 to N using a queue.
+    static ArrayList<String> generateBinaryNosUsingQueue(int N)
+    {
+        ArrayList<String> res = new ArrayList<String>();
+        Queue<String> q = new LinkedList<>();
+        //pushing first binary number i.e. 1 in queue.
+        q.add("1");
 
-        return strBuffer.toString();
-    }*/
+        while(N > 0) {
+            //storing the front element of queue and popping it.
+            String s1 = q.peek();
+            q.poll();
+
+            //adding the popped element in answer.
+            res.add(s1);
+
+            //generating the next two binary numbers by adding  to
+            //the existing strings s1 and s2 and pushing them into queue.
+            q.add(s1 + '0');
+            q.add(s1 + '1');
+            N--;
+        }
+        //returning the list.
+        return res ;
+    }
 }
 
