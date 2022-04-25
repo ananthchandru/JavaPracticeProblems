@@ -31,8 +31,8 @@ class KLargestElements {
 
 
     public static void main(String[] args) {
-        int[] input = {2, 5, 3, 1, 6, 4};
-        int k = 3;
+        int[] input = {1,2,3,4,5,6};
+        int k = 2;
         ArrayList<Integer> outputMin = getKLargestElementsMinHeap(input, k);
         ArrayList<Integer> outputMax = getKLargestElementsMaxHeap(input, k);
         System.out.println(outputMin.toString());

@@ -8,7 +8,8 @@ public class RemoveCharacter {
         String input = "abcdefef";
         String delete = "ef";
         String output = removeDirtyChars(input, delete);
-        System.out.println(output);
+        String output2 = removeChars(input, delete);
+        System.out.println(output2);
     }
 
     static String removeDirtyChars(String str, String mask_str) {
@@ -35,5 +36,14 @@ public class RemoveCharacter {
             count[ch]++;
         }
         return count;
+    }
+
+    static String removeChars(String string1, String string2){
+        String finalStr = "";
+        for(int i = 0 ; i < string1.length() ; i++) {
+            if(!string2.contains(String.valueOf(string1.charAt(i))))
+                finalStr = finalStr + string1.charAt(i);
+        }
+        return finalStr;
     }
 }
