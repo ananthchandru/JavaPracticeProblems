@@ -5,7 +5,7 @@ public class NumberOfOccurences {
     public static void main(String[] args) {
         int[] arr = {1,1,1,2,2,2,2,2,3,3,4,4,6,7,8};
   //      System.out.println(count3(arr, arr.length, 4));
-        System.out.println(count1(arr, arr.length, 1));
+        System.out.println(count1(arr, arr.length, 2));
         System.out.println(count1(arr, arr.length, 3));
         System.out.println(count1(arr, arr.length, 8));
         System.out.println(count1(arr, arr.length, 9));
@@ -21,73 +21,30 @@ public class NumberOfOccurences {
     static int count1(int[] arr, int n, int x) {
         if(x<arr[0] || x >arr[n-1])
             return 0;
-        int i = firstOccurence1(arr, x, 0, n-1);
+        int i = binarySearch(arr, x, 0, n-1, true);
         if(i==-1)
             return 0;
  //       int j = lastOccurence(arr, x, i, n-1, n);
-        int j = lastOccurence1(arr, x, i, n-1);
+        int j = binarySearch(arr, x, i, n-1, false);
         return j-i+1;
     }
 
-/*    static int firstOccurence(int[] arr, int num, int low, int high) {
+    static int binarySearch(int arr[], int num, int low, int high, boolean isFirstOccurence) {
+        int index=-1;
         while(low <= high) {
-            int mid =  (low+high)/2;
-            if((mid==0 || num > arr[mid-1]) && (num == arr[mid]))
-                return mid;
-            else if(num > arr[mid])
-                low = mid+1;
-            else
-                high = mid-1;
-        }
-        return -1;
-    }*/
-
-    static int firstOccurence1(int arr[], int num, int low, int high) {
-        int firstIndex=-1;
-        while(low <= high) {
-            int mid= low +(high-low/2);
+            int mid= (high+low)/2;
             if(arr[mid] == num) {
-                firstIndex=mid;
-                high=mid - 1;
+                index=mid;
+                if(isFirstOccurence)
+                    high=mid - 1;
+                else
+                    low = mid+1;
             } else if(arr[mid] > num)
                 high = mid -1;
             else if(arr[mid] < num)
                 low = mid + 1;
         }
-        return firstIndex;
-    }
-
-
-
-    /*static int lastOccurence(int[] arr, int num, int low, int high, int arrLength) {
-        while(low <= high) {
-            int mid = (low+high)/2;
-            if((mid==arrLength-1 || num < arr[mid+1]) && (num == arr[mid]))
-                return mid;
-            //Order of else if condition ( num < arr[mid]) followed by else condition is important
-            //because for last occurence you want to still traverse forward and you reset high before low
-            //else you would travel reverse and would never find
-            else if(num < arr[mid])
-                high = mid-1;
-            else
-                low = mid+1;
-        }
-        return -1;
-    }*/
-
-    static int lastOccurence1(int arr[], int num, int low, int high) {
-        int lastIndex=-1;
-        while(low <= high) {
-            int mid= (low+high)/2;
-            if(arr[mid] == num) {
-                lastIndex=mid;
-                low = mid+1;
-            } else if(arr[mid] > num)
-                high = mid -1;
-            else if(arr[mid] < num)
-                low = mid + 1;
-        }
-        return lastIndex;
+        return index;
     }
 
     //Approach 3 (not recommended): Binary search => O(log N + k) where k is number of occurrences.
@@ -101,21 +58,6 @@ public class NumberOfOccurences {
         for(int j=index-1; j>=0 && arr[j] == x;j--)
             count++;
         return count;
-    }
+    } */
 
-
-    static int binarySearch(int[] arr, int num, int low, int high) {
-        if(num<arr[low] || num >arr[high])
-            return -1;
-        while(low <= high) {
-            int mid = low+ (high-low)/2;
-            if(num == arr[mid])
-                return mid;
-            else if(num > arr[mid])
-                low = mid+1;
-            else
-                high = mid-1;
-        }
-        return -1;
-    }*/
 }
