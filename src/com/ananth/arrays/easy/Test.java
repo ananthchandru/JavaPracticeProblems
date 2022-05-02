@@ -1,33 +1,29 @@
-package com.ananth.arrays.easy;
-
-import java.util.PriorityQueue;
-import java.util.Collections;
-import java.util.Arrays;
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
 
 class Test {
     public static void main(String[] args) {
-        long[] arr = {-1,7,4,3,2,6,-2};
-        long[] output = findElements(arr, arr.length);
-        System.out.println(Arrays.toString(output));
+        System.out.println(strstr("ccdeecbdfedcbabfdfaebdaf", "fecfacbccfe"));
     }
-    public static long[] findElements(long a[], int n) {
-        long[] output = new long[n-2];
-        PriorityQueue<Long> queue = new PriorityQueue<Long>(Collections.reverseOrder());
-        for(int i=0;i<n-2;i++)
-            queue.add(a[i]);
 
-        for(int i=n-2;i<n;i++) {
-            long peek = queue.peek();
-            if(peek > a[i]) {
-                queue.poll();
-                queue.add(a[i]);
+    static int strstr(String s, String x) {
+        int position = -1;
+        if(x.length() > s.length())
+            return position;
+        for(int i=0;i<s.length();i++) {
+            if(s.charAt(i)==x.charAt(0)) {
+                int j=i+1;
+                int k=1;
+
+                while(k<x.length() && j<s.length() && s.charAt(j)==x.charAt(k)){
+                    j++;k++;
+                }
+                if(k==x.length()) {
+                    position = i;
+                    break;
+                }
             }
         }
-        int j=output.length-1;
-        while(!queue.isEmpty()) {
-            output[j] = queue.poll();
-            j--;
-        }
-        return output;
+        return position;
     }
 }
