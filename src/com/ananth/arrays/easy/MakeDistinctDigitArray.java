@@ -10,7 +10,7 @@ import java.util.HashSet;
 public class MakeDistinctDigitArray {
 
     public static void main(String[] args) {
-        int[] arr = {131, 11, 48};
+        int[] arr = {141, 11, 28};
         int[] result = common_digits(arr);
         System.out.println(Arrays.toString(result));
     }
@@ -24,6 +24,7 @@ public class MakeDistinctDigitArray {
             }
         }
         int[] arr = set.stream().mapToInt(Number::intValue).toArray();
+        Arrays.sort(arr);
         return arr;
     }
 }

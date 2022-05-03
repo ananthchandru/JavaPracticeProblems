@@ -10,14 +10,14 @@ public class SubstringFirstAndLastCharacter {
     }
 
     static int getSubstringCount(String str) {
-        int substringCount = 0;
-        int[] count = new int[str.length()];
-        for(char ch: str.toCharArray()) {
-            count[Integer.valueOf(ch)]++;
+        int[] count = new int[256];
+        int result = 0;
+        for(int i=0;i<str.length();i++) {
+            count[str.charAt(i)]++;
         }
-        for(int c: count) {
-            substringCount+=c;
+        for(int i=0;i<count.length;i++) {
+            result += count[i]*(count[i]+1)/2;
         }
-        return substringCount;
+        return result;
     }
 }
