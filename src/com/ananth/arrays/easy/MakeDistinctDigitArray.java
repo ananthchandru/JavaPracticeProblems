@@ -23,7 +23,7 @@ public class MakeDistinctDigitArray {
                 nums[i] /=10;
             }
         }
-        int[] arr = set.stream().mapToInt(Number::intValue).toArray();
+        int[] arr = set.stream().mapToInt(x->x).toArray();
         Arrays.sort(arr);
         return arr;
     }
