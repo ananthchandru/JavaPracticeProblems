@@ -1,4 +1,4 @@
-package com.ananth.arrays.easy;
+package com.ananth.string.easy;
 
 public class BinaryString {
     public static void main(String[] args) {

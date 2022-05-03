@@ -1,4 +1,4 @@
-package com.ananth.arrays.easy;
+package com.ananth.string.easy;
 
 // Java program to find minimum number of
 // characters to be removed to make two

@@ -1,4 +1,4 @@
-package com.ananth.arrays.easy;
+package com.ananth.string.easy;
 
 import java.util.*;
 
