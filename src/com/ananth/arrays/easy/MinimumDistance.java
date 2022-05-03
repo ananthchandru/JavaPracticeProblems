@@ -3,7 +3,7 @@ package com.ananth.arrays.easy;
 public class MinimumDistance {
 
     public static void main(String[] args) {
-        int[] arr = {0, 5, 8, 1, 6, 7, 5};
+        int[] arr = {0, 5, 8, 1, 6, 7, 5, 8, 6, 5};
         System.out.println(minDist1(arr, arr.length, 5, 6));
 //        int[] arr = {1, 2, 3, 2};
 //        System.out.println(minDist1(arr, arr.length, 1, 4));
