@@ -8,7 +8,7 @@ public class CheckForSubsequence {
         System.out.println(isSubSequence("bdg", "abcedbcedfg"));
     }
 
-    static boolean isSubSequence(String A, String B){
+    static boolean isSubSequence(String A, String B) {
         boolean isSubSeq = false;
         int strLength = B.length();
         int substrLength = A.length();
